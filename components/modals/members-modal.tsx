@@ -38,7 +38,6 @@ import {
   DropdownMenuTrigger,
   DropdownMenuSubTrigger,
 } from "@/components/ui/dropdown-menu";
-import { set } from "zod";
 
 const roleIconMap = {
   GUEST: null,
@@ -95,8 +94,6 @@ export const MembersModal = () => {
       setLoadingId("");
     }
   };
-
-  console.log(server?.members);
 
   return (
     <Dialog open={isModalOpen} onOpenChange={onClose}>
