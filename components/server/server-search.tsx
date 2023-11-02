@@ -16,7 +16,7 @@ import {
 interface ServerSearchProps {
   data: {
     label: string;
-    type: "channel" | "member";
+    type: "channel" | "members";
     data:
       | {
           icon: React.ReactNode;
@@ -50,11 +50,11 @@ const ServerSearch = ({ data }: ServerSearchProps) => {
     type,
   }: {
     id: string;
-    type: "channel" | "member";
+    type: "channel" | "members";
   }) => {
     setOpen(false);
 
-    if (type === "member") {
+    if (type === "members") {
       return router.push(`/server/${params?.serverId}/conversations/${id}`);
     }
 
