@@ -70,7 +70,6 @@ export const CreateChannelModal = () => {
     } else {
       form.setValue("type", ChannelType.TEXT);
     }
-    console.log(channelType);
   }, [channelType, form]);
 
   const isLoading = form.formState.isSubmitting;

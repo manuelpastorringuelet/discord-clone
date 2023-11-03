@@ -10,7 +10,6 @@ import { db } from "@/lib/db";
 import { ServerHeader } from "./server-header";
 import ServerSearch from "./server-search";
 import ServerSection from "./server-section";
-import { channel } from "diagnostics_channel";
 import ServerChannel from "./server-channel";
 import ServerMember from "./server-member";
 
@@ -131,7 +130,7 @@ export const ServerSidebar = async ({ serverId }: ServerSidebarProps) => {
         {!!textChannels?.length && (
           <div className="mb-2">
             <ServerSection
-              sectionType="channel"
+              sectionType="channels"
               channelType={ChannelType.TEXT}
               role={role}
               label="Text Channels"
@@ -151,7 +150,7 @@ export const ServerSidebar = async ({ serverId }: ServerSidebarProps) => {
         {!!audioChannels?.length && (
           <div className="mb-2">
             <ServerSection
-              sectionType="channel"
+              sectionType="channels"
               channelType={ChannelType.AUDIO}
               role={role}
               label="Voice Channels"
@@ -171,7 +170,7 @@ export const ServerSidebar = async ({ serverId }: ServerSidebarProps) => {
         {!!videoChannels?.length && (
           <div className="mb-2">
             <ServerSection
-              sectionType="channel"
+              sectionType="channels"
               channelType={ChannelType.VIDEO}
               role={role}
               label="Video Channels"
