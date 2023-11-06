@@ -32,6 +32,8 @@ const ChannelIdPage = async ({ params }: ChannelIdPageProps) => {
     },
   });
 
+  console.log(channel);
+
   if (!channel || !member) {
     redirect("/");
   }
