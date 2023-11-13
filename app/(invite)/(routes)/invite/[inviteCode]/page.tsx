@@ -29,10 +29,24 @@ const InviteCodePage = async ({ params }: InviteCodePageProps) => {
         },
       },
     },
+    include: {
+      channels: {
+        where: {
+          name: "general",
+        },
+        orderBy: {
+          createAt: "asc",
+        },
+      },
+    },
   });
 
+  const initialChannel = existingServer?.channels[0];
+
   if (existingServer) {
-    return redirect(`/servers/${existingServer.id}`);
+    return redirect(
+      `/servers/${existingServer.id}/channels/${initialChannel?.id}`,
+    );
   }
 
   const server = await db.server.update({

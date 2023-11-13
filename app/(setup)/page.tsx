@@ -15,10 +15,22 @@ const SetupPage = async () => {
         },
       },
     },
+    include: {
+      channels: {
+        where: {
+          name: "general",
+        },
+        orderBy: {
+          createAt: "asc",
+        },
+      },
+    },
   });
 
+  const initialChannel = server?.channels[0];
+
   if (server) {
-    return redirect(`/servers/${server.id}`);
+    return redirect(`/servers/${server.id}/channels/${initialChannel?.id}`);
   }
 
   return <InitialModal />;
